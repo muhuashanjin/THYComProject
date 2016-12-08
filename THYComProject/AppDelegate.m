@@ -35,7 +35,14 @@
                              initWithCenterViewController:centerNav
                              leftDrawerViewController:leftNav
                              rightDrawerViewController:rightNav];
+    
+    [drawerController setShowsShadow:YES];
+    [drawerController setRestorationIdentifier:@"MMDrawer"];
+    [drawerController setMaximumRightDrawerWidth:200.0];
+    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
 
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = drawerController;

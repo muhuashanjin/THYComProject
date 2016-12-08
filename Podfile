@@ -7,6 +7,8 @@ target 'THYComProject' do
 
 pod 'AFNetworking'
 pod 'MMDrawerController'
+pod 'MBProgressHUD'
+pod 'SVProgressHUD'
 
   # Pods for THYComProject
 
