@@ -7,45 +7,28 @@
 //
 
 #import "AppDelegate.h"
-#import "CenterViewController.h"
-#import "LeftViewController.h"
-#import "RightViewController.h"
+#import "RootViewController.h"
 #import "BaseNavViewController.h"
+
+#define AddExtension(objc_class) \
+[self performSelector:@selector(addExtension:) withObject:[objc_class class]]
 
 @interface AppDelegate ()
 
 @end
 
-
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    LeftViewController *leftVC = [[LeftViewController alloc] init];
-    BaseNavViewController *leftNav = [[BaseNavViewController alloc] initWithRootViewController:leftVC];
+    RootViewController *root = [[RootViewController alloc] init];
+    BaseNavViewController *rootNav = [[BaseNavViewController alloc] initWithRootViewController:root];
 
-    RightViewController *rightVC = [[RightViewController alloc] init];
-    BaseNavViewController *rightNav = [[BaseNavViewController alloc] initWithRootViewController:rightVC];
-
-    CenterViewController *centerVC = [[CenterViewController alloc] init];
-    BaseNavViewController *centerNav = [[BaseNavViewController alloc] initWithRootViewController:centerVC];
-
-    MMDrawerController *drawerController = [[MMDrawerController alloc]
-                             initWithCenterViewController:centerNav
-                             leftDrawerViewController:leftNav
-                             rightDrawerViewController:rightNav];
-    
-    [drawerController setShowsShadow:YES];
-    [drawerController setRestorationIdentifier:@"MMDrawer"];
-    [drawerController setMaximumRightDrawerWidth:200.0];
-    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = drawerController;
+    self.window.rootViewController = rootNav;
+    
+    [self loadExtensions];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -80,6 +63,23 @@
     [self saveContext];
 }
 
+#pragma mark - laod Extensions
+- (void)loadExtensions{
+    AddExtension(MainExtension);
+}
+
+- (void)addExtension:(Class)clazz
+{
+    if ([clazz conformsToProtocol:@protocol(ExtensionHandle)]) {
+        if (!self.extensionArray) {
+            self.extensionArray = [NSMutableArray array];
+        }
+        [self.extensionArray addObject:clazz];
+    }
+    else {
+        NSAssert(@"Loading extension error : %@", NSStringFromClass(clazz));
+    }
+}
 
 #pragma mark - Core Data stack
 

@@ -6,7 +6,6 @@ target 'THYComProject' do
   # use_frameworks!
 
 pod 'AFNetworking'
-pod 'MMDrawerController'
 pod 'MBProgressHUD'
 pod 'SVProgressHUD'
 

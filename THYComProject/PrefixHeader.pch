@@ -16,6 +16,7 @@
 
 
 #ifdef __OBJC__
+#import "AppGlobalMacro.h"
 
 #import "BaseViewController.h"
 #import "MMDrawerController.h"
@@ -23,5 +24,11 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "SVProgressHUD.h"
 #import "MBProgressHUD.h"
+#import "CTNetworking.h"
+#import "LFCategory.h"
+
+#import "BaseAPIManager.h"
+#import "MsgHandleCenter.h"
+#import "MainExtension.h"
 
 #endif

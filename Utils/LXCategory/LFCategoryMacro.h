@@ -219,6 +219,11 @@ LF_EXTERN_C_BEGIN
 #endif
 #endif //_UTKDevLog
 
+#ifdef DEBUG
+# define DLog(format, ...) NSLog((@"[文件名:%s]" "[函数名:%s]" "[行号:%d]" format), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define DLog(...);
+#endif
 
 #ifndef LF_MAX
 #define LF_MAX(a, b)  (((a) > (b)) ? (a) : (b))
