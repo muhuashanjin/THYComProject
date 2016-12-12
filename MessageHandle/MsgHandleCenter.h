@@ -54,7 +54,7 @@ typedef enum {
 +(void)sendMessageToRootController:(int)messageType withResult:(int)result withArg:(id)arg;
 
 +(void)sendMessage:(int)messageType withArg:(id)arg;
-+(void)sendMessage:(int)messageType withArg:(id)arg withBolck:(dispatch_block_t)block;
++(void)sendMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc;
 
 
 @end

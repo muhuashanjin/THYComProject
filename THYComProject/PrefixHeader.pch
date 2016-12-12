@@ -26,6 +26,7 @@
 #import "MBProgressHUD.h"
 #import "CTNetworking.h"
 #import "LFCategory.h"
+#import "GYDataCenter.h"
 
 #import "BaseAPIManager.h"
 #import "MsgHandleCenter.h"

@@ -13,6 +13,7 @@
 #import "CTServiceFactory.h"
 #import "CTAppContext.h"
 #import "CTApiProxy.h"
+#import "CTAppContext.h"
 
 NSString const *baseUrl = kBaseUrl;
 
@@ -369,6 +370,12 @@ NSString * const kBSUserTokenNotificationUserInfoKeyManagerToContinue = @"kBSUse
         NSArray *dicArr = [param componentsSeparatedByString:@"="];
         [dic setObject:dicArr[1] forKey:dicArr[0]];
     }
+
+    //add token
+    if ([CTAppContext sharedInstance].apiToken) {
+        [dic setObject:[CTAppContext sharedInstance].apiToken forKey:@"token"];
+    }
+
     return dic;
 }
 

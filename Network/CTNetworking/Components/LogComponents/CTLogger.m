@@ -39,11 +39,8 @@
     
     [logString appendFormat:@"API Name:\t\t%@\n", [apiName CT_defaultValue:@"N/A"]];
     [logString appendFormat:@"Method:\t\t\t%@\n", [httpMethod CT_defaultValue:@"N/A"]];
-    [logString appendFormat:@"Version:\t\t%@\n", [service.apiVersion CT_defaultValue:@"N/A"]];
     [logString appendFormat:@"Service:\t\t%@\n", [service class]];
     [logString appendFormat:@"Status:\t\t\t%@\n", isOnline ? @"online" : @"offline"];
-    [logString appendFormat:@"Public Key:\t\t%@\n", [service.publicKey CT_defaultValue:@"N/A"]];
-    [logString appendFormat:@"Private Key:\t%@\n", [service.privateKey CT_defaultValue:@"N/A"]];
     [logString appendFormat:@"Params:\n%@", requestParams];
     
     [logString appendURLRequest:request];
@@ -86,10 +83,7 @@
     NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                      Cached Response                       =\n==============================================================\n\n"];
     
     [logString appendFormat:@"API Name:\t\t%@\n", [methodName CT_defaultValue:@"N/A"]];
-    [logString appendFormat:@"Version:\t\t%@\n", [service.apiVersion CT_defaultValue:@"N/A"]];
     [logString appendFormat:@"Service:\t\t%@\n", [service class]];
-    [logString appendFormat:@"Public Key:\t\t%@\n", [service.publicKey CT_defaultValue:@"N/A"]];
-    [logString appendFormat:@"Private Key:\t%@\n", [service.privateKey CT_defaultValue:@"N/A"]];
     [logString appendFormat:@"Method Name:\t%@\n", methodName];
     [logString appendFormat:@"Params:\n%@\n\n", response.requestParams];
     [logString appendFormat:@"Content:\n\t%@\n\n", response.contentString];

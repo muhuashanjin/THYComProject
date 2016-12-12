@@ -160,32 +160,32 @@ static  BaseViewController *rootviewcontrol = nil;
 
 +(void)sendMessage:(int)messageType withArg:(id)arg
 {
-    [MsgHandleCenter sendMessage:messageType withArg:arg withBolck:NULL];
+    [MsgHandleCenter sendMessage:messageType withArg:arg withVc:nil];
 }
 
-+(void)sendMessage:(int)messageType withArg:(id)arg withBolck:(dispatch_block_t)block
++(void)sendMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc
 {
     MsgHandleCenter *mHandleCenter = [MsgHandleCenter new];
     if ([[NSThread currentThread] isMainThread])
     {
-        [mHandleCenter handMessage:messageType withArg:arg withBlock:block];
+        [mHandleCenter handMessage:messageType withArg:arg  withVc:vc];
     }
     else
     {
-        NSMethodSignature *sig = [MsgHandleCenter methodSignatureForSelector:@selector(handMessage: withArg: withBlock:)];
+        NSMethodSignature *sig = [MsgHandleCenter methodSignatureForSelector:@selector(handMessage: withArg: withVc:)];
         if (!sig) return;
         NSInvocation* invo = [NSInvocation invocationWithMethodSignature:sig];
         [invo setTarget:mHandleCenter];
-        [invo setSelector:@selector(handMessage: withArg: withBlock:)];
+        [invo setSelector:@selector(handMessage: withArg: withVc:)];
         [invo setArgument:&messageType atIndex:2];
         [invo setArgument:&arg atIndex:3];
-        [invo setArgument:&block atIndex:4];
+        [invo setArgument:&vc atIndex:4];
         [invo retainArguments];
         [invo performSelectorOnMainThread:@selector(invoke) withObject:nil waitUntilDone:NO];
     }
 }
 
-- (id)handMessage:(int)messageType withArg:(id)arg withBlock:(dispatch_block_t)block
+- (id)handMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc
 {
     // extension dispatch
     AppDelegate *app = (AppDelegate *)[[UIApplication  sharedApplication] delegate];
@@ -193,12 +193,14 @@ static  BaseViewController *rootviewcontrol = nil;
           //http
         if ([clazz respondsToSelector:@selector(autoHttpGetTaskMsg:)]
             && [clazz autoHttpGetTaskMsg:messageType]) {
-            [[BaseAPIManager sharedInstance] loadData:arg withMethod:CTAPIManagerRequestTypeGet withMsgeType:messageType];
+            NSInteger requestId = [[BaseAPIManager sharedInstance] loadData:arg withMethod:CTAPIManagerRequestTypeGet withMsgeType:messageType];
+            [vc addRequest:[NSNumber numberWithInteger:requestId]];
             return nil;
         }
         if ([clazz respondsToSelector:@selector(autoHttpPostTaskMsg:)]
             && [clazz autoHttpPostTaskMsg:messageType]) {
-            [[BaseAPIManager sharedInstance] loadData:arg withMethod:CTAPIManagerRequestTypePost withMsgeType:messageType];
+            NSInteger requestId = [[BaseAPIManager sharedInstance] loadData:arg withMethod:CTAPIManagerRequestTypePost withMsgeType:messageType];
+            [vc addRequest:[NSNumber numberWithInteger:requestId]];
             return nil;
         }
         // extension handle

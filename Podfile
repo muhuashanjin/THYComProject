@@ -5,11 +5,13 @@ target 'THYComProject' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-pod 'AFNetworking'
-pod 'MBProgressHUD'
-pod 'SVProgressHUD'
-
   # Pods for THYComProject
+
+pod 'AFNetworking'
+pod 'SVProgressHUD'
+pod 'MBProgressHUD'
+pod 'MLeaksFinder'
+pod 'GYDataCenter'
 
   target 'THYComProjectTests' do
     inherit! :search_paths

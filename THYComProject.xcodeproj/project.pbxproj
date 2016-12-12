@@ -437,12 +437,12 @@
 		931C0E821DF980CC00A9CCF1 /* BaseVC */ = {
 			isa = PBXGroup;
 			children = (
+				931C0E871DF980CC00A9CCF1 /* BaseViewController.h */,
+				931C0E881DF980CC00A9CCF1 /* BaseViewController.m */,
 				931C0E831DF980CC00A9CCF1 /* BaseNavViewController.h */,
 				931C0E841DF980CC00A9CCF1 /* BaseNavViewController.m */,
 				931C0E851DF980CC00A9CCF1 /* BaseShowViewController.h */,
 				931C0E861DF980CC00A9CCF1 /* BaseShowViewController.m */,
-				931C0E871DF980CC00A9CCF1 /* BaseViewController.h */,
-				931C0E881DF980CC00A9CCF1 /* BaseViewController.m */,
 				931C0E891DF980CC00A9CCF1 /* RootViewController.h */,
 				931C0E8A1DF980CC00A9CCF1 /* RootViewController.m */,
 			);
@@ -840,9 +840,9 @@
 		93E491661DF5143B004775DF /* THYComProject */ = {
 			isa = PBXGroup;
 			children = (
-				931C0EA61DF98A5B00A9CCF1 /* AppGlobalMacro.h */,
 				93E4916A1DF5143B004775DF /* AppDelegate.h */,
 				93E4916B1DF5143B004775DF /* AppDelegate.m */,
+				931C0EA61DF98A5B00A9CCF1 /* AppGlobalMacro.h */,
 				931C0E8F1DF9818100A9CCF1 /* UI */,
 				931C0E821DF980CC00A9CCF1 /* BaseVC */,
 				931C0E7E1DF9808400A9CCF1 /* MessageHandle */,

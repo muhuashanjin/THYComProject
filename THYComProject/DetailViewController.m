@@ -30,11 +30,10 @@
     [doneBtn setBackgroundImage:[[UIImage imageNamed:@"bby_create_new_item_done_image"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)] forState:UIControlStateNormal];
     [doneBtn addTarget:self action:@selector(actionDone) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:doneBtn];
+        
+    [self sendMessage:kTaskMsg_Main_TestToExtension withArg:kURL_Main_TestLogin];
     
-    [MsgHandleCenter sendMessage:kTaskMsg_Main_TestToExtension withArg:kURL_Main_TestLogin];
-    
-    [MsgHandleCenter sendMessage:kTaskMsg_Main_TestToVC withArg:kURL_Main_TestLogin];
-
+    [self sendMessage:kTaskMsg_Main_TestToVC withArg:kURL_Main_TestLogin];
 }
 
 - (void)actionDone

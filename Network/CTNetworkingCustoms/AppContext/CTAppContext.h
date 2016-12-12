@@ -30,6 +30,7 @@
 @property (nonatomic, assign, readonly) BOOL isOnline;
 
 // 用户token相关
+@property (nonatomic, copy) NSString *apiToken;
 @property (nonatomic, copy, readonly) NSString *accessToken;
 @property (nonatomic, copy, readonly) NSString *refreshToken;
 @property (nonatomic, assign, readonly) NSTimeInterval lastRefreshTime;

@@ -10,6 +10,12 @@
 
 @interface BaseViewController : UIViewController
 
+@property(nonatomic,strong)NSMutableArray *requestIds;
+
+- (void)addRequest:(NSNumber *)requestId;
+- (void)cancelRequest;
+
+-(void)sendMessage:(int)messageType withArg:(id)arg;
 -(BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg;
 -(void)PreProcessMessage:(int)messageType withResult:(int)result withArg:(id)arg;
 -(void)PostProcessMessage:(int)messageType withResult:(int)result withArg:(id)arg;

@@ -9,7 +9,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FBRetainCycleDetector.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GYDataCenter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MLeaksFinder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,17 +52,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0F90520CD620311D9DE2B9F103813B37</key>
+		<key>197F376EA5D0EE3995829776025185D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5209A0991B8D936EA706BCDE89337484</key>
+		<key>401549B0736562B12960DB2EAF659C68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9F12FB4A63E20F601CFB2E64A65B57C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7CD31FBB2C6E54C4720474EB467BE21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9C5D98D8ADD7148978F671F156051D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C821EDAD5CA1F94DDEDE3F7285991572</key>
 		<dict>
 			<key>primary</key>
 			<true/>

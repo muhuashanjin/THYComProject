@@ -10,6 +10,7 @@
 
 @interface BaseViewController ()
 
+
 @end
 
 @implementation BaseViewController
@@ -25,11 +26,50 @@
 
 - (void)dealloc
 {
+    [self cancelRequest];
     [MsgHandleCenter removeController:self];
+}
+
+-(void)sendMessage:(int)messageType withArg:(id)arg
+{
+    if (!arg)
+    {
+        [MsgHandleCenter sendMessage:messageType withArg:arg];
+    }
+    else
+    {
+        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self];
+    }
 }
 
 -(BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg{return NO;}
 -(void)PreProcessMessage:(int)messageType withResult:(int)result withArg:(id)arg{}
 -(void)PostProcessMessage:(int)messageType withResult:(int)result withArg:(id)arg{}
 
+- (void)addRequest:(NSNumber *)requestId
+{
+    @synchronized (self.requestIds)
+    {
+        [self.requestIds addObject:requestId];
+    }
+}
+
+- (void)cancelRequest
+{
+    @synchronized (_requestIds)
+    {
+        if (_requestIds.count>0)
+        {
+            [[CTApiProxy sharedInstance] cancelRequestWithRequestIDList:_requestIds];
+        }
+    }
+}
+
+- (NSMutableArray *)requestIds
+{
+    if (!_requestIds) {
+        _requestIds = [[NSMutableArray alloc] init];
+    }
+    return _requestIds;
+}
 @end

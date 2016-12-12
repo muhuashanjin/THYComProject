@@ -17,45 +17,15 @@
     return [CTAppContext sharedInstance].isOnline;
 }
 
-- (NSString *)offlineApiBaseUrl
+- (NSString *)baseUrl
 {
     extern NSString *baseUrl;
     return baseUrl;
 }
 
-- (NSString *)onlineApiBaseUrl
+- (NSString *)token
 {
-    extern NSString *baseUrl;
-    return baseUrl;
+    return [CTAppContext sharedInstance].apiToken;
 }
 
-- (NSString *)offlineApiVersion
-{
-    return @"";
-}
-
-- (NSString *)onlineApiVersion
-{
-    return @"";
-}
-
-- (NSString *)onlinePublicKey
-{
-    return @"";
-}
-
-- (NSString *)offlinePublicKey
-{
-    return @"";
-}
-
-- (NSString *)onlinePrivateKey
-{
-    return @"";
-}
-
-- (NSString *)offlinePrivateKey
-{
-    return @"";
-}
 @end

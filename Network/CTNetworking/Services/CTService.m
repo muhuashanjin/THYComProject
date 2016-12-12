@@ -23,24 +23,14 @@
 }
 
 #pragma mark - getters and setters
-- (NSString *)privateKey
-{
-    return self.child.isOnline ? self.child.onlinePrivateKey : self.child.offlinePrivateKey;
-}
-
-- (NSString *)publicKey
-{
-    return self.child.isOnline ? self.child.onlinePublicKey : self.child.offlinePublicKey;
-}
-
 - (NSString *)apiBaseUrl
 {
-    return self.child.isOnline ? self.child.onlineApiBaseUrl : self.child.offlineApiBaseUrl;
+    return self.child.baseUrl;
 }
 
-- (NSString *)apiVersion
+- (NSString *)apiToken
 {
-    return self.child.isOnline ? self.child.onlineApiVersion : self.child.offlineApiVersion;
+    return self.child.token;
 }
 
 @end
