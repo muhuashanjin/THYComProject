@@ -11,6 +11,9 @@
 #import "UIViewController+MMDrawerController.h"
 #import "DetailViewController.h"
 
+#import "Employee.h"
+#import "Department.h"
+
 @interface CenterViewController ()<UITabBarDelegate>
 
 @end
@@ -35,7 +38,9 @@
     [doneBtn setBackgroundImage:[[UIImage imageNamed:@"bby_create_new_item_done_image"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)] forState:UIControlStateNormal];
     [doneBtn addTarget:self action:@selector(actionDone) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:doneBtn];
+    
 }
+
 
 - (void)actionDone
 {

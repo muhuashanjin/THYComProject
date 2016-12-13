@@ -19,6 +19,8 @@
 		931C0EA41DF9818100A9CCF1 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 931C0E9C1DF9818100A9CCF1 /* RightViewController.m */; };
 		931C0EA51DF9818100A9CCF1 /* MainExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 931C0E9F1DF9818100A9CCF1 /* MainExtension.m */; };
 		931C0EA91DF99E1E00A9CCF1 /* BaseAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 931C0EA81DF99E1E00A9CCF1 /* BaseAPIManager.m */; };
+		935592231DFE406F009FB90B /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 935592201DFE406F009FB90B /* Department.m */; };
+		935592241DFE406F009FB90B /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 935592221DFE406F009FB90B /* Employee.m */; };
 		9360FEFD1DF93CB6009BE7A4 /* NSArray+AXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9360FEBA1DF93CB6009BE7A4 /* NSArray+AXNetworkingMethods.m */; };
 		9360FEFE1DF93CB6009BE7A4 /* NSDictionary+AXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9360FEBC1DF93CB6009BE7A4 /* NSDictionary+AXNetworkingMethods.m */; };
 		9360FEFF1DF93CB6009BE7A4 /* NSMutableString+AXNetworkingMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9360FEBE1DF93CB6009BE7A4 /* NSMutableString+AXNetworkingMethods.m */; };
@@ -172,6 +174,10 @@
 		931C0EA61DF98A5B00A9CCF1 /* AppGlobalMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppGlobalMacro.h; sourceTree = "<group>"; };
 		931C0EA71DF99E1E00A9CCF1 /* BaseAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseAPIManager.h; path = ../../../../THYComProject/BaseAPIManager.h; sourceTree = "<group>"; };
 		931C0EA81DF99E1E00A9CCF1 /* BaseAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseAPIManager.m; path = ../../../../THYComProject/BaseAPIManager.m; sourceTree = "<group>"; };
+		9355921F1DFE406F009FB90B /* Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Department.h; sourceTree = "<group>"; };
+		935592201DFE406F009FB90B /* Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Department.m; sourceTree = "<group>"; };
+		935592211DFE406F009FB90B /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		935592221DFE406F009FB90B /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		9360FEB91DF93CB6009BE7A4 /* NSArray+AXNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AXNetworkingMethods.h"; sourceTree = "<group>"; };
 		9360FEBA1DF93CB6009BE7A4 /* NSArray+AXNetworkingMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AXNetworkingMethods.m"; sourceTree = "<group>"; };
 		9360FEBB1DF93CB6009BE7A4 /* NSDictionary+AXNetworkingMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AXNetworkingMethods.h"; sourceTree = "<group>"; };
@@ -535,6 +541,10 @@
 		931C0EA01DF9818100A9CCF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9355921F1DFE406F009FB90B /* Department.h */,
+				935592201DFE406F009FB90B /* Department.m */,
+				935592211DFE406F009FB90B /* Employee.h */,
+				935592221DFE406F009FB90B /* Employee.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1410,6 +1420,8 @@
 				9360FF061DF93CB6009BE7A4 /* CTCache.m in Sources */,
 				9360FF051DF93CB6009BE7A4 /* CTAPIBaseManager.m in Sources */,
 				93FEEB721DF7D94600F3F34F /* LFNSDate+Ext.m in Sources */,
+				935592241DFE406F009FB90B /* Employee.m in Sources */,
+				935592231DFE406F009FB90B /* Department.m in Sources */,
 				9360FF3B1DF958A0009BE7A4 /* MMDrawerController.m in Sources */,
 				93FEEB9B1DF7D94600F3F34F /* LFUIView+LFViewIsDisplaying.m in Sources */,
 				93FEEB851DF7D94600F3F34F /* LFUIApplication+Add.m in Sources */,
