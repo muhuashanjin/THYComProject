@@ -24,12 +24,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JDStatusBarNotification.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>MLeaksFinder.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -44,7 +54,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,12 +72,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>197F376EA5D0EE3995829776025185D2</key>
+		<key>27614AF11263D9397DBD3B32E8E898A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>375A018C8FE82A9659F6D08F072AE581</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>401549B0736562B12960DB2EAF659C68</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78FA82344C89079FDDDAF74DDD57BEFA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,11 +107,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7CD31FBB2C6E54C4720474EB467BE21</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B9C5D98D8ADD7148978F671F156051D3</key>
 		<dict>
 			<key>primary</key>
@@ -87,12 +117,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D85178220D8CAD7C88EBBEF5341947F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E97E3E2C3DEAF00F44E553AE03DBEE67</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF5CFD6F2B044B2583AE363E38A9D0EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

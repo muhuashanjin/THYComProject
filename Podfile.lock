@@ -20,27 +20,41 @@ PODS:
   - FMDB/standard (2.6.2)
   - GYDataCenter (0.1.1):
     - FMDB
+  - JDStatusBarNotification (1.5.5)
+  - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MLeaksFinder (0.2.1):
     - FBRetainCycleDetector
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.0.3)
+  - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
   - AFNetworking
   - GYDataCenter
+  - JDStatusBarNotification
+  - Masonry
   - MBProgressHUD
   - MLeaksFinder
+  - SDWebImage
   - SVProgressHUD
+  - UITableView+FDTemplateLayoutCell
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   GYDataCenter: 620dc2564589f50d2370a691303e0d7215f7c0af
+  JDStatusBarNotification: 2b4f29bd68a60d7aa2f190b5265f1ce59c18aaf8
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MLeaksFinder: 0850e2f2abc7227adc4d4e2d1992b431264eb4d5
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: 685733c0ad539c45f5faa1e960f8320f2021b5c4
+PODFILE CHECKSUM: 0384e1b98fc5cbbdc21d0c788a320167b90d97b7
 
 COCOAPODS: 1.0.1

@@ -12,6 +12,10 @@ pod 'SVProgressHUD'
 pod 'MBProgressHUD'
 pod 'MLeaksFinder'
 pod 'GYDataCenter'
+pod 'Masonry'
+pod 'JDStatusBarNotification'
+pod 'SDWebImage'
+pod 'UITableView+FDTemplateLayoutCell'
 
   target 'THYComProjectTests' do
     inherit! :search_paths

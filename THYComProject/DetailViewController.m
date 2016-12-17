@@ -30,15 +30,22 @@
     [doneBtn setBackgroundImage:[[UIImage imageNamed:@"bby_create_new_item_done_image"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)] forState:UIControlStateNormal];
     [doneBtn addTarget:self action:@selector(actionDone) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:doneBtn];
-        
-    [self sendMessage:kTaskMsg_Main_TestToExtension withArg:kURL_Main_TestLogin];
     
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 250, 100, 100)];
+//    [imageView setImageWithURL:[NSURL URLWithString:@"http://static.qiakr.com/0-D22ED4FC-84D8-4C1C-99CF-43F48A369946"]];
+//    [self.view addSubview:imageView];
+
+    [self sendMessage:kTaskMsg_Main_TestToExtension withArg:kURL_Main_TestLogin];
     [self sendMessage:kTaskMsg_Main_TestToVC withArg:kURL_Main_TestLogin];
 }
 
 - (void)actionDone
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(100, 350, 100, 100)];
+    [imageView1 sd_setImageWithURL:[NSURL URLWithString:@"http://static.qiakr.com/0-D22ED4FC-84D8-4C1C-99CF-43F48A369946"]];
+    [self.view addSubview:imageView1];
+
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - messageHandle

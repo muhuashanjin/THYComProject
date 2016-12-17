@@ -27,7 +27,7 @@ static NSString *CTPasteboardType = @"xxxx";
 static BOOL kCTShouldCache = YES;
 static BOOL kCTServiceIsOnline = NO;
 static NSTimeInterval kCTNetworkingTimeoutSeconds = 20.0f;       // 网络请求超时时间
-static NSTimeInterval kCTCacheOutdateTimeSeconds = 30;           // cache过期时间
+static NSTimeInterval kCTCacheOutdateTimeSeconds = 5;           // cache过期时间
 static NSUInteger kCTCacheCountLimit = 1000;                     // cache最多条数限制
 
 // services

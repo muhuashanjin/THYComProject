@@ -31,7 +31,7 @@
     
     
     UIButton *doneBtn = [[UIButton alloc] initWithFrame:CGRectMake(100,100, 100, 40)];
-    [doneBtn setTitle:@"进入" forState:UIControlStateNormal];
+    [doneBtn setTitle:@"点击" forState:UIControlStateNormal];
     doneBtn.backgroundColor = [UIColor clearColor];
     [doneBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [doneBtn.titleLabel setFont:[UIFont systemFontOfSize:14.0]];
@@ -39,6 +39,7 @@
     [doneBtn addTarget:self action:@selector(actionDone) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:doneBtn];
     
+    NSLog(@"%@",NSDocumentsPath());
 }
 
 
