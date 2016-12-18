@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AMPopTip.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBRetainCycleDetector.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -69,15 +79,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>XRCarouselView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>27614AF11263D9397DBD3B32E8E898A1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>375A018C8FE82A9659F6D08F072AE581</key>
+		<key>0A1EEBDFB3E64DCD535EDFACC8FE6F14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>78FA82344C89079FDDDAF74DDD57BEFA</key>
+		<key>5BE63A2453C5113538968207DD3E3EA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>736E57AD5AEFAAF68D47AE4E8FCB8F68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,6 +122,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A4334A73039BE363A92D9EB8A88297AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A43D44ACD35E4F622735F417187CAD5F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B9C5D98D8ADD7148978F671F156051D3</key>
 		<dict>
 			<key>primary</key>
@@ -117,12 +142,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D85178220D8CAD7C88EBBEF5341947F8</key>
+		<key>E97E3E2C3DEAF00F44E553AE03DBEE67</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E97E3E2C3DEAF00F44E553AE03DBEE67</key>
+		<key>F6379FB92C8CEEA9F81B9A141C43532A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7493F30C208FE5BB5E32E9A93E66D33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
