@@ -16,6 +16,9 @@ pod 'Masonry'
 pod 'JDStatusBarNotification'
 pod 'SDWebImage'
 pod 'UITableView+FDTemplateLayoutCell'
+pod 'AMPopTip'
+pod 'XRCarouselView'
+pod 'DZNEmptyDataSet'
 
   target 'THYComProjectTests' do
     inherit! :search_paths
