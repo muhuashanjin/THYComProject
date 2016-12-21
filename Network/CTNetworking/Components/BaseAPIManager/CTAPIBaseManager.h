@@ -219,7 +219,9 @@ typedef NS_ENUM (NSUInteger, CTAPIManagerRequestType){
     CTAPIManagerRequestTypeGet,
     CTAPIManagerRequestTypePost,
     CTAPIManagerRequestTypePut,
-    CTAPIManagerRequestTypeDelete
+    CTAPIManagerRequestTypeDelete,
+    CTAPIManagerRequestTypeUpload,
+    CTAPIManagerRequestTypeDownload
 };
 
 
@@ -303,6 +305,8 @@ typedef NS_ENUM (NSUInteger, CTAPIManagerRequestType){
 
 //尽量使用loadData这个方法,这个方法会通过param source来获得参数，这使得参数的生成逻辑位于controller中的固定位置
 - (NSInteger)loadData:(NSString *)url withMethod:(CTAPIManagerRequestType)requestType withMsgeType:(int)messageType;
+- (NSInteger)uploadData:(NSString *)url withMsgeType:(int)messageType withUploadData:(id)data;
+- (NSInteger)downloadData:(NSString *)url withMsgeType:(int)messageType withDownloadPath:(NSString *)path;
 
 - (void)cancelAllRequests;
 - (void)cancelRequestWithRequestId:(NSInteger)requestID;

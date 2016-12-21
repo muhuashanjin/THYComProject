@@ -20,7 +20,7 @@ NSString const *baseUrl = kBaseUrl;
 #define AXCallAPI(REQUEST_METHOD, REQUEST_ID, URL_RESPONSE)                                                   \
 {                                                                                               \
     __weak typeof(self) weakSelf = self;                                                        \
-    REQUEST_ID = [[CTApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiParams serviceIdentifier:URL_RESPONSE.serviceType methodName:URL_RESPONSE.methodName messageType:URL_RESPONSE.messageType success:^(CTURLResponse *response) { \
+    REQUEST_ID = [[CTApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiParams urlResponse:URL_RESPONSE success:^(CTURLResponse *response) { \
         __strong typeof(weakSelf) strongSelf = weakSelf;                                        \
         [strongSelf successedOnCallingAPI:response];                                            \
     } fail:^(CTURLResponse *response) {                                                        \
@@ -116,7 +116,37 @@ NSString * const kBSUserTokenNotificationUserInfoKeyManagerToContinue = @"kBSUse
     
     NSURL *realUrl = [NSURL URLWithString:url];
     baseUrl = [NSString stringWithFormat:@"%@://%@",realUrl.scheme,realUrl.host];
-    CTURLResponse *response = [[CTURLResponse alloc] initWithResponseString:messageType metName:realUrl.relativePath serType:kServiceIndefiniteForMain reqType:requestType];
+    CTURLResponse *response = [[CTURLResponse alloc] initWithResponseString:messageType metName:realUrl.relativePath serType:kServiceIndefiniteForMain reqType:requestType uploadData:nil downloadPath:nil];
+    NSDictionary *params = [self handleParamStr:realUrl.query];
+    NSInteger requestId = [self loadDataWithParams:params withUrlReponse:response];
+    return requestId;
+}
+
+- (NSInteger)uploadData:(NSString *)url withMsgeType:(int)messageType withUploadData:(id)data
+{
+    if (!url) {
+        DLog("==== ERROR : URL String Empty ====");
+        return 0;
+    }
+    
+    NSURL *realUrl = [NSURL URLWithString:url];
+    baseUrl = [NSString stringWithFormat:@"%@://%@",realUrl.scheme,realUrl.host];
+    CTURLResponse *response = [[CTURLResponse alloc] initWithResponseString:messageType metName:realUrl.relativePath serType:kServiceIndefiniteForMain reqType:CTAPIManagerRequestTypeUpload uploadData:data downloadPath:nil];
+    NSDictionary *params = [self handleParamStr:realUrl.query];
+    NSInteger requestId = [self loadDataWithParams:params withUrlReponse:response];
+    return requestId;
+}
+
+- (NSInteger)downloadData:(NSString *)url withMsgeType:(int)messageType withDownloadPath:(NSString *)path
+{
+    if (!url) {
+        DLog("==== ERROR : URL String Empty ====");
+        return 0;
+    }
+    
+    NSURL *realUrl = [NSURL URLWithString:url];
+    baseUrl = [NSString stringWithFormat:@"%@://%@",realUrl.scheme,realUrl.host];
+    CTURLResponse *response = [[CTURLResponse alloc] initWithResponseString:messageType metName:realUrl.relativePath serType:kServiceIndefiniteForMain reqType:CTAPIManagerRequestTypeUpload uploadData:nil downloadPath:path];
     NSDictionary *params = [self handleParamStr:realUrl.query];
     NSInteger requestId = [self loadDataWithParams:params withUrlReponse:response];
     return requestId;
@@ -154,6 +184,12 @@ NSString * const kBSUserTokenNotificationUserInfoKeyManagerToContinue = @"kBSUse
                             break;
                         case CTAPIManagerRequestTypeDelete:
                             AXCallAPI(DELETE, requestId, response);
+                        break;
+                        case CTAPIManagerRequestTypeUpload:
+                            AXCallAPI(UPLOAD, requestId, response);
+                        break;
+                        case CTAPIManagerRequestTypeDownload:
+                            AXCallAPI(DOWNLOAD, requestId, response);
                         break;
                         default:
                             break;
@@ -197,7 +233,7 @@ NSString * const kBSUserTokenNotificationUserInfoKeyManagerToContinue = @"kBSUse
     [self removeRequestIdWithRequestID:response.requestId];
     if ([self.validator manager:self isCorrectWithCallBackData:response.content]) {
         
-        if ([self shouldCache] && !response.isCache) {
+        if ([self shouldCache] && !response.isCache && response.requestType != CTAPIManagerRequestTypeUpload && response.requestType != CTAPIManagerRequestTypeDownload) {
             [self.cache saveCacheWithData:response.responseData serviceIdentifier:response.serviceType methodName:response.methodName messageType:response.messageType requestParams:response.requestParams];
         }
         

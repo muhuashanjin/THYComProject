@@ -14,16 +14,9 @@
 
 @property (nonatomic, assign, readwrite) CTURLResponseStatus status;
 @property (nonatomic, copy, readwrite) NSString *contentString;
-@property (nonatomic, copy, readwrite) id content;
 @property (nonatomic, copy, readwrite) NSURLRequest *request;
-@property (nonatomic, assign, readwrite) NSInteger requestId;
 @property (nonatomic, copy, readwrite) NSData *responseData;
 @property (nonatomic, assign, readwrite) BOOL isCache;
-
-@property (nonatomic, assign,readwrite) int messageType;
-@property (nonatomic, copy,readwrite) NSString *methodName;
-@property (nonatomic, copy,readwrite) NSString *serviceType;
-@property (nonatomic, assign,readwrite) int requestType;
 
 @end
 
@@ -97,7 +90,7 @@
     return self;
 }
 
-- (instancetype)initWithResponseString:(int)messageType metName:(NSString *)metName serType:(NSString *)serType reqType:(int)reqType
+- (instancetype)initWithResponseString:(int)messageType metName:(NSString *)metName serType:(NSString *)serType reqType:(int)reqType uploadData:(id)data downloadPath:(NSString *)path
 {
     self = [super init];
     if (self) {
@@ -105,6 +98,8 @@
         self.serviceType = serType;
         self.requestType = reqType;
         self.messageType = messageType;
+        self.uploadData = data;
+        self.downloadPath = path;
     }
     return self;
 }

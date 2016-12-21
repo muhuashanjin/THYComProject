@@ -101,6 +101,47 @@
     return request;
 }
 
+- (NSURLRequest *)generateUploadRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName uploadData:(id)data fileName:(NSString *)fName;
+{
+    CTService *service = [[CTServiceFactory sharedInstance] serviceWithIdentifier:serviceIdentifier];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", service.apiBaseUrl, methodName];
+    
+    [self.httpRequestSerializer setValue:[[NSUUID UUID] UUIDString] forHTTPHeaderField:@"xxxxxxxx"];
+    
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:urlString parameters:requestParams constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        if ([data isKindOfClass:[UIImage class]])
+        {
+            //图片
+            NSData* imageData = UIImageJPEGRepresentation(data, 1.0);
+            [formData appendPartWithFileData:imageData name:@"file" fileName:fName mimeType:@"multipart/form-data"];
+        }
+        else
+        {
+            //文件路径
+            [formData appendPartWithFileURL:[NSURL fileURLWithPath:data] name:@"file" fileName:fName mimeType:@"application/octet-stream" error:nil];
+        }
+    
+    } error:NULL];
+    
+    
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:requestParams options:0 error:NULL];
+    if ([CTAppContext sharedInstance].accessToken) {
+        [request setValue:[CTAppContext sharedInstance].accessToken forHTTPHeaderField:@"xxxxxxxx"];
+    }
+    request.requestParams = requestParams;
+    return request;
+}
+
+- (NSURLRequest *)generateDownloadRequestWithServiceIdentifier:(NSString *)serviceIdentifier requestParams:(NSDictionary *)requestParams methodName:(NSString *)methodName
+{
+    CTService *service = [[CTServiceFactory sharedInstance] serviceWithIdentifier:serviceIdentifier];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", service.apiBaseUrl, methodName];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    return request;
+}
+
 #pragma mark - getters and setters
 - (AFHTTPRequestSerializer *)httpRequestSerializer
 {

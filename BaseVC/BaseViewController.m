@@ -38,9 +38,22 @@
     }
     else
     {
-        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self];
+        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self withUploadData:nil];
     }
 }
+
+-(void)sendMessage:(int)messageType withArg:(id)arg withUploadData:(id)data
+{
+    if (arg && data)
+    {
+        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self withUploadData:data];
+    }
+    else
+    {
+        [MsgHandleCenter sendMessage:messageType withArg:arg];
+    }
+}
+
 
 -(BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg{return NO;}
 -(void)PreProcessMessage:(int)messageType withResult:(int)result withArg:(id)arg{}

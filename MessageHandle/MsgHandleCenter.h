@@ -31,6 +31,12 @@ typedef enum {
 // 判断是否是HttpPost消息，并是否自动处理
 + (BOOL)autoHttpPostTaskMsg:(int)taskMsg;
 
+// 判断是否是HttpUpload消息，并是否自动处理
++ (BOOL)autoHttpUploadTaskMsg:(int)taskMsg;
+
+// 判断是否是HttpDownload消息，并是否自动处理
++ (BOOL)autoHttpDownloadTaskMsg:(int)taskMsg;
+
 // 用于处理资源相关的如网络请求、DB保存等消息，返回YES将停止继续分发消息
 + (BOOL)handleResourceMessageType:(int)messageType withArg:(id)arg;
 
@@ -54,7 +60,8 @@ typedef enum {
 +(void)sendMessageToRootController:(int)messageType withResult:(int)result withArg:(id)arg;
 
 +(void)sendMessage:(int)messageType withArg:(id)arg;
-+(void)sendMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc;
++(void)sendMessage:(int)messageType withArg:(id)arg withUploadData:(id)data;
++(void)sendMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc withUploadData:(id)data;
 
 
 @end

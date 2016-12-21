@@ -9,7 +9,6 @@
 #import "CenterViewController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
-#import "DetailViewController.h"
 
 #import "Employee.h"
 #import "Department.h"

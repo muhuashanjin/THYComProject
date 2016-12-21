@@ -13,16 +13,18 @@
 
 @property (nonatomic, assign, readonly) CTURLResponseStatus status;
 @property (nonatomic, copy, readonly) NSString *contentString;
-@property (nonatomic, copy, readonly) id content;
-@property (nonatomic, assign, readonly) NSInteger requestId;
+@property (nonatomic, copy, readwrite) id content;
+@property (nonatomic, assign, readwrite) NSInteger requestId;
 @property (nonatomic, copy, readonly) NSURLRequest *request;
 @property (nonatomic, copy, readonly) NSData *responseData;
 @property (nonatomic, copy) NSDictionary *requestParams;
 
-@property (nonatomic, assign,readonly) int messageType;
-@property (nonatomic, copy,readonly) NSString *methodName;
-@property (nonatomic, copy,readonly) NSString *serviceType;
-@property (nonatomic, assign,readonly) int requestType;
+@property (nonatomic, assign,readwrite) int messageType;
+@property (nonatomic, copy,readwrite) NSString *methodName;
+@property (nonatomic, copy,readwrite) NSString *serviceType;
+@property (nonatomic, assign,readwrite) int requestType;
+@property (nonatomic, copy,readwrite) id uploadData;
+@property (nonatomic, copy,readwrite) NSString *downloadPath;
 
 @property (nonatomic, assign, readonly) BOOL isCache;
 
@@ -33,6 +35,6 @@
 // 使用initWithData的response，它的isCache是YES，上面两个函数生成的response的isCache是NO
 - (instancetype)initWithData:(NSData *)data messageType:(int)messageType metName:(NSString *)metName serType:(NSString *)serType reqType:(int)reqType;
 
-- (instancetype)initWithResponseString:(int)messageType metName:(NSString *)metName serType:(NSString *)serType reqType:(int)reqType;
+- (instancetype)initWithResponseString:(int)messageType metName:(NSString *)metName serType:(NSString *)serType reqType:(int)reqType uploadData:(id)data downloadPath:(NSString *)path;
 
 @end

@@ -15,10 +15,12 @@ typedef void(^AXCallback)(CTURLResponse *response);
 
 + (instancetype)sharedInstance;
 
-- (NSInteger)callGETWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName messageType:(int)messageType success:(AXCallback)success fail:(AXCallback)fail;
-- (NSInteger)callPOSTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName messageType:(int)messageType success:(AXCallback)success fail:(AXCallback)fail;
-- (NSInteger)callPUTWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName messageType:(int)messageType success:(AXCallback)success fail:(AXCallback)fail;
-- (NSInteger)callDELETEWithParams:(NSDictionary *)params serviceIdentifier:(NSString *)servieIdentifier methodName:(NSString *)methodName messageType:(int)messageType success:(AXCallback)success fail:(AXCallback)fail;
+- (NSInteger)callGETWithParams:(NSDictionary *)params urlResponse:(CTURLResponse *)response success:(AXCallback)success fail:(AXCallback)fail;
+- (NSInteger)callPOSTWithParams:(NSDictionary *)params urlResponse:(CTURLResponse *)response success:(AXCallback)success fail:(AXCallback)fail;
+- (NSInteger)callPUTWithParams:(NSDictionary *)params urlResponse:(CTURLResponse *)response success:(AXCallback)success fail:(AXCallback)fail;
+- (NSInteger)callDELETEWithParams:(NSDictionary *)params urlResponse:(CTURLResponse *)response success:(AXCallback)success fail:(AXCallback)fail;
+- (NSInteger)callUPLOADWithParams:(NSDictionary *)params urlResponse:(CTURLResponse *)response success:(AXCallback)success fail:(AXCallback)fail;
+- (NSInteger)callDOWNLOADWithParams:(NSDictionary *)params urlResponse:(CTURLResponse *)response success:(AXCallback)success fail:(AXCallback)fail;
 
 
 - (NSNumber *)callApiWithRequest:(NSURLRequest *)request messageType:(int)messageType success:(AXCallback)success fail:(AXCallback)fail;

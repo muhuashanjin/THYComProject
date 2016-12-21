@@ -160,47 +160,72 @@ static  BaseViewController *rootviewcontrol = nil;
 
 +(void)sendMessage:(int)messageType withArg:(id)arg
 {
-    [MsgHandleCenter sendMessage:messageType withArg:arg withVc:nil];
+    [MsgHandleCenter sendMessage:messageType withArg:arg withVc:nil withUploadData:nil withDownloadPath:nil];
 }
 
-+(void)sendMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc
++(void)sendMessage:(int)messageType withArg:(id)arg withUploadData:(id)data
+{
+    [MsgHandleCenter sendMessage:messageType withArg:arg withVc:nil withUploadData:data withDownloadPath:nil];
+}
+
++(void)sendMessage:(int)messageType withArg:(id)arg withDownloadPath:(NSString *)path
+{
+    [MsgHandleCenter sendMessage:messageType withArg:arg withVc:nil withUploadData:nil withDownloadPath:path];
+}
+
++(void)sendMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc withUploadData:(id)data withDownloadPath:(NSString *)path
 {
     MsgHandleCenter *mHandleCenter = [MsgHandleCenter new];
     if ([[NSThread currentThread] isMainThread])
     {
-        [mHandleCenter handMessage:messageType withArg:arg  withVc:vc];
+        [mHandleCenter handMessage:messageType withArg:arg  withVc:vc withUploadData:data withDownloadPath:path];
     }
     else
     {
-        NSMethodSignature *sig = [MsgHandleCenter methodSignatureForSelector:@selector(handMessage: withArg: withVc:)];
+        NSMethodSignature *sig = [MsgHandleCenter methodSignatureForSelector:@selector(handMessage: withArg: withVc: withUploadData: withDownloadPath:)];
         if (!sig) return;
         NSInvocation* invo = [NSInvocation invocationWithMethodSignature:sig];
         [invo setTarget:mHandleCenter];
-        [invo setSelector:@selector(handMessage: withArg: withVc:)];
+        [invo setSelector:@selector(handMessage: withArg: withVc: withUploadData: withDownloadPath:)];
         [invo setArgument:&messageType atIndex:2];
         [invo setArgument:&arg atIndex:3];
         [invo setArgument:&vc atIndex:4];
+        [invo setArgument:&data atIndex:5];
+        [invo setArgument:&path atIndex:6];
         [invo retainArguments];
         [invo performSelectorOnMainThread:@selector(invoke) withObject:nil waitUntilDone:NO];
     }
 }
 
-- (id)handMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc
+- (id)handMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc withUploadData:(id)data withDownloadPath:(NSString *)path
 {
     // extension dispatch
     AppDelegate *app = (AppDelegate *)[[UIApplication  sharedApplication] delegate];
     for (Class clazz in app.extensionArray) {
-          //http
+        //http get
         if ([clazz respondsToSelector:@selector(autoHttpGetTaskMsg:)]
             && [clazz autoHttpGetTaskMsg:messageType]) {
             NSInteger requestId = [[BaseAPIManager sharedInstance] loadData:arg withMethod:CTAPIManagerRequestTypeGet withMsgeType:messageType];
             [vc addRequest:[NSNumber numberWithInteger:requestId]];
             return nil;
         }
+        //http post
         if ([clazz respondsToSelector:@selector(autoHttpPostTaskMsg:)]
             && [clazz autoHttpPostTaskMsg:messageType]) {
             NSInteger requestId = [[BaseAPIManager sharedInstance] loadData:arg withMethod:CTAPIManagerRequestTypePost withMsgeType:messageType];
             [vc addRequest:[NSNumber numberWithInteger:requestId]];
+            return nil;
+        }
+        //http upload
+        if ([clazz respondsToSelector:@selector(autoHttpUploadTaskMsg:)]
+            && [clazz autoHttpUploadTaskMsg:messageType]) {
+            [[BaseAPIManager sharedInstance] uploadData:arg withMsgeType:messageType withUploadData:data];
+            return nil;
+        }
+        //http download
+        if ([clazz respondsToSelector:@selector(autoHttpDownloadTaskMsg:)]
+            && [clazz autoHttpDownloadTaskMsg:messageType]) {
+            [[BaseAPIManager sharedInstance] downloadData:arg withMsgeType:messageType withDownloadPath:path];
             return nil;
         }
         // extension handle
