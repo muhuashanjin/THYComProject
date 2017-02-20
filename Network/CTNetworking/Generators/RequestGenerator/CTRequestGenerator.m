@@ -116,7 +116,7 @@
             NSData* imageData = UIImageJPEGRepresentation(data, 1.0);
             [formData appendPartWithFileData:imageData name:@"file" fileName:fName mimeType:@"multipart/form-data"];
         }
-        else
+        else if ([data isKindOfClass:[NSString class]])
         {
             //文件路径
             [formData appendPartWithFileURL:[NSURL fileURLWithPath:data] name:@"file" fileName:fName mimeType:@"application/octet-stream" error:nil];

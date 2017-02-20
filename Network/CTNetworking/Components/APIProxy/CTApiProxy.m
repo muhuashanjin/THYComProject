@@ -97,43 +97,39 @@ static NSString * const kAXApiProxyDispatchItemKeyCallbackFail = @"kAXApiProxyDi
     if ([data isKindOfClass:[NSArray class]]) {
         
         NSArray *datas = (NSArray *)data;
-        if ([[datas firstObject] isKindOfClass:[UIImage class]]) {
-            
-            // 准备保存结果的数组，元素个数与上传的图片个数相同，先用 NSNull 占位
-            NSMutableArray* result = [NSMutableArray array];
-            for (int i = 0; i<datas.count; i++) {
-                [result addObject:[NSNull null]];
-            }
-            
-            dispatch_group_t group = dispatch_group_create();
-            for (int i = 0; i<datas.count; i++) {
-                
-                UIImage *image = datas[i];
-                NSString *fileName = [NSString stringWithFormat:@"file%d",i];
-                dispatch_group_enter(group);
-                NSURLRequest *request = [[CTRequestGenerator sharedInstance] generateUploadRequestWithServiceIdentifier:response.serviceType requestParams:params methodName:response.methodName uploadData:image fileName:fileName];
-                [self callUploadWithRequest:request group:group result:result index:i];
-            }
-            
-            dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-                //上传完成
-                CTURLResponse *CTResponse = [[CTURLResponse alloc] init];
-                CTResponse.content = result;
-                CTResponse.requestId = [requestId integerValue];
-                CTResponse.messageType = response.messageType;
-                
-                if (datas.count == result.count) {
-                    success?success(response):nil;
-                }
-                else
-                {
-                    fail?fail(response):nil;
-                }
-            });
-
+        
+        // 准备保存结果的数组，元素个数与上传的图片个数相同，先用 NSNull 占位
+        NSMutableArray* result = [NSMutableArray array];
+        for (int i = 0; i<datas.count; i++) {
+            [result addObject:[NSNull null]];
         }
+        
+        dispatch_group_t group = dispatch_group_create();
+        for (int i = 0; i<datas.count; i++) {
+            
+            UIImage *image = datas[i];
+            NSString *fileName = [NSString stringWithFormat:@"file%d",i];
+            dispatch_group_enter(group);
+            NSURLRequest *request = [[CTRequestGenerator sharedInstance] generateUploadRequestWithServiceIdentifier:response.serviceType requestParams:params methodName:response.methodName uploadData:image fileName:fileName];
+            [self callUploadWithRequest:request group:group result:result index:i];
+        }
+        
+        dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+            //上传完成
+            CTURLResponse *CTResponse = [[CTURLResponse alloc] init];
+            CTResponse.content = result;
+            CTResponse.requestId = [requestId integerValue];
+            CTResponse.messageType = response.messageType;
+            
+            if (datas.count == result.count) {
+                success?success(response):nil;
+            }
+            else
+            {
+                fail?fail(response):nil;
+            }
+        });
     }
-    
     return [requestId integerValue];
 }
 

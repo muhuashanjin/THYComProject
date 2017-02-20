@@ -222,6 +222,7 @@ static  BaseViewController *rootviewcontrol = nil;
             [[BaseAPIManager sharedInstance] uploadData:arg withMsgeType:messageType withUploadData:data];
             return nil;
         }
+        
         //http download
         if ([clazz respondsToSelector:@selector(autoHttpDownloadTaskMsg:)]
             && [clazz autoHttpDownloadTaskMsg:messageType]) {
@@ -237,6 +238,7 @@ static  BaseViewController *rootviewcontrol = nil;
     return nil;
 }
 
+/*! log controllerArr contain UIViewController */
 +(NSString *)dump
 {
     NSMutableString *dumpString = [NSMutableString string];
@@ -247,9 +249,9 @@ static  BaseViewController *rootviewcontrol = nil;
 }
 
 
+/*! set nonRetain array */
 static const void* TTRetainNoOp(CFAllocatorRef allocator, const void *value) { return value; }
 static void TTReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
-
 NSMutableArray* TTCreateNonRetainingArray() {
     CFArrayCallBacks callbacks = kCFTypeArrayCallBacks;
     callbacks.retain = TTRetainNoOp;

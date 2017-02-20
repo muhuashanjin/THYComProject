@@ -38,7 +38,7 @@
     }
     else
     {
-        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self withUploadData:nil];
+        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self withUploadData:nil withDownloadPath:nil];
     }
 }
 
@@ -46,7 +46,7 @@
 {
     if (arg && data)
     {
-        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self withUploadData:data];
+        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self withUploadData:data withDownloadPath:nil];
     }
     else
     {
@@ -54,6 +54,17 @@
     }
 }
 
+-(void)sendMessage:(int)messageType withArg:(id)arg withDownloadPath:(NSString *)path
+{
+    if (arg && path)
+    {
+        [MsgHandleCenter sendMessage:messageType withArg:arg withVc:self withUploadData:nil withDownloadPath:path];
+    }
+    else
+    {
+        [MsgHandleCenter sendMessage:messageType withArg:arg];
+    }
+}
 
 -(BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg{return NO;}
 -(void)PreProcessMessage:(int)messageType withResult:(int)result withArg:(id)arg{}

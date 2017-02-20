@@ -16,6 +16,9 @@
 - (void)cancelRequest;
 
 -(void)sendMessage:(int)messageType withArg:(id)arg;
+-(void)sendMessage:(int)messageType withArg:(id)arg withUploadData:(id)data;
+-(void)sendMessage:(int)messageType withArg:(id)arg withDownloadPath:(NSString *)path;
+
 -(BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg;
 -(void)PreProcessMessage:(int)messageType withResult:(int)result withArg:(id)arg;
 -(void)PostProcessMessage:(int)messageType withResult:(int)result withArg:(id)arg;
