@@ -9,7 +9,7 @@
 #import "LFUIView+Badge.h"
 #import "LFCategory.h"
 
-//< 亲自测量 default   width = {20 27 35 } height = {20}  system
+///< 亲自测量 default   width = {20 27 35 } height = {20}  system
 #define LF_BADGE_VIEW_REDDOT_WIDTH          ((sizeType == LFBadgeSizeTypeNormal) ? 8.0 : 8.0)
 #define LF_BADGE_VIEW_HEIGHT                ((sizeType == LFBadgeSizeTypeNormal) ? 15.0 : 15.0)
 #define LF_BADGE_VIEW_SAMLL_WIDTH           ((sizeType == LFBadgeSizeTypeNormal) ? 15.0 : 15.0)

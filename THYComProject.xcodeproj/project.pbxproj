@@ -55,6 +55,10 @@
 		9360FF3D1DF958A0009BE7A4 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9360FF391DF958A0009BE7A4 /* UIViewController+MMDrawerController.m */; };
 		9366CB631DF6AF9700C81A82 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366CB621DF6AF9700C81A82 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		936BFC741E07E09100A81962 /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 936BFC731E07E09100A81962 /* NullSafe.m */; };
+		939600B11EA5AC1F00AB8AFA /* UIViewController+MsgHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 939600B01EA5AC1F00AB8AFA /* UIViewController+MsgHandle.m */; };
+		939600BC1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 939600BB1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.m */; };
+		939600BE1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939600BD1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist */; };
+		939600C01EA6178E00AB8AFA /* MainExtensionMsgType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939600BF1EA6178E00AB8AFA /* MainExtensionMsgType.plist */; };
 		93C4B65C1E053CD60051C109 /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C4B6531E053CD60051C109 /* NSObject+Swizzling.m */; };
 		93C4B65D1E053CD60051C109 /* sure_placeholder_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C4B6541E053CD60051C109 /* sure_placeholder_error@2x.png */; };
 		93C4B65E1E053CD60051C109 /* sure_placeholder_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C4B6551E053CD60051C109 /* sure_placeholder_error@3x.png */; };
@@ -65,6 +69,7 @@
 		93D0153A1DF6893400EE1EE2 /* freshnavibar_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D015361DF6893300EE1EE2 /* freshnavibar_back@2x.png */; };
 		93D0153B1DF6893400EE1EE2 /* hm_zlbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D015371DF6893300EE1EE2 /* hm_zlbg@2x.png */; };
 		93D0153C1DF6893400EE1EE2 /* navi_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D015381DF6893300EE1EE2 /* navi_back@2x.png */; };
+		93D121521E9DC0AF004B6606 /* LoginExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D121511E9DC0AF004B6606 /* LoginExtension.m */; };
 		93E491691DF5143B004775DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E491681DF5143B004775DF /* main.m */; };
 		93E4916C1DF5143B004775DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E4916B1DF5143B004775DF /* AppDelegate.m */; };
 		93E491751DF5143B004775DF /* THYComProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93E491731DF5143B004775DF /* THYComProject.xcdatamodeld */; };
@@ -258,6 +263,12 @@
 		9366CB611DF6AF9700C81A82 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		9366CB621DF6AF9700C81A82 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		936BFC731E07E09100A81962 /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
+		939600AF1EA5AC1F00AB8AFA /* UIViewController+MsgHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MsgHandle.h"; path = "../BaseVC/UIViewController+MsgHandle.h"; sourceTree = "<group>"; };
+		939600B01EA5AC1F00AB8AFA /* UIViewController+MsgHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MsgHandle.m"; path = "../BaseVC/UIViewController+MsgHandle.m"; sourceTree = "<group>"; };
+		939600BA1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+MsgHandle.h"; sourceTree = "<group>"; };
+		939600BB1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+MsgHandle.m"; sourceTree = "<group>"; };
+		939600BD1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MsgHandleCenterExtension.plist; sourceTree = "<group>"; };
+		939600BF1EA6178E00AB8AFA /* MainExtensionMsgType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainExtensionMsgType.plist; sourceTree = "<group>"; };
 		93C4B6521E053CD60051C109 /* NSObject+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzling.h"; sourceTree = "<group>"; };
 		93C4B6531E053CD60051C109 /* NSObject+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzling.m"; sourceTree = "<group>"; };
 		93C4B6541E053CD60051C109 /* sure_placeholder_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sure_placeholder_error@2x.png"; sourceTree = "<group>"; };
@@ -273,6 +284,8 @@
 		93D015361DF6893300EE1EE2 /* freshnavibar_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "freshnavibar_back@2x.png"; sourceTree = "<group>"; };
 		93D015371DF6893300EE1EE2 /* hm_zlbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hm_zlbg@2x.png"; sourceTree = "<group>"; };
 		93D015381DF6893300EE1EE2 /* navi_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_back@2x.png"; sourceTree = "<group>"; };
+		93D121501E9DC0AF004B6606 /* LoginExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginExtension.h; sourceTree = "<group>"; };
+		93D121511E9DC0AF004B6606 /* LoginExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginExtension.m; sourceTree = "<group>"; };
 		93E491641DF5143B004775DF /* THYComProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THYComProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E491681DF5143B004775DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93E4916A1DF5143B004775DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -467,6 +480,11 @@
 			children = (
 				931C0E7F1DF9808400A9CCF1 /* MsgHandleCenter.h */,
 				931C0E801DF9808400A9CCF1 /* MsgHandleCenter.m */,
+				939600AF1EA5AC1F00AB8AFA /* UIViewController+MsgHandle.h */,
+				939600B01EA5AC1F00AB8AFA /* UIViewController+MsgHandle.m */,
+				939600BA1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.h */,
+				939600BB1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.m */,
+				939600BD1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist */,
 			);
 			path = MessageHandle;
 			sourceTree = SOURCE_ROOT;
@@ -518,6 +536,8 @@
 				932EAD781E0A511A0044BC47 /* Image */,
 				932EAD791E0A511A0044BC47 /* Model */,
 				932EAD7A1E0A511A0044BC47 /* View */,
+				93D121501E9DC0AF004B6606 /* LoginExtension.h */,
+				93D121511E9DC0AF004B6606 /* LoginExtension.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -559,6 +579,7 @@
 				932EAD7C1E0A511A0044BC47 /* Controller */,
 				932EAD841E0A511A0044BC47 /* MainExtension.h */,
 				932EAD851E0A511A0044BC47 /* MainExtension.m */,
+				939600BF1EA6178E00AB8AFA /* MainExtensionMsgType.plist */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1366,7 +1387,9 @@
 				93D0153A1DF6893400EE1EE2 /* freshnavibar_back@2x.png in Resources */,
 				93E4917A1DF5143B004775DF /* LaunchScreen.storyboard in Resources */,
 				9360FF141DF93CB6009BE7A4 /* CTNetworkingConfiguration.plist in Resources */,
+				939600BE1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist in Resources */,
 				93D0153B1DF6893400EE1EE2 /* hm_zlbg@2x.png in Resources */,
+				939600C01EA6178E00AB8AFA /* MainExtensionMsgType.plist in Resources */,
 				93FEEBA91DF7D94600F3F34F /* 分类说明.rtf in Resources */,
 				93D0153C1DF6893400EE1EE2 /* navi_back@2x.png in Resources */,
 				93FEEBAD1DF7D94600F3F34F /* 工具类说明.rtf in Resources */,
@@ -1493,6 +1516,7 @@
 				93FEEB801DF7D94600F3F34F /* LFNSString+Add.m in Sources */,
 				9360FF041DF93CB6009BE7A4 /* CTApiProxy.m in Sources */,
 				93FEEB9D1DF7D94600F3F34F /* LFUIViewController+Add.m in Sources */,
+				93D121521E9DC0AF004B6606 /* LoginExtension.m in Sources */,
 				93FEEBA71DF7D94600F3F34F /* UITextField+LXExtension.m in Sources */,
 				9366CB631DF6AF9700C81A82 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				936BFC741E07E09100A81962 /* NullSafe.m in Sources */,
@@ -1577,6 +1601,7 @@
 				9360FF0A1DF93CB6009BE7A4 /* CTLogger.m in Sources */,
 				93FEEBA41DF7D94600F3F34F /* NSString+LXExtension.m in Sources */,
 				93FEEB881DF7D94600F3F34F /* LFUIBezierPath+Add.m in Sources */,
+				939600BC1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.m in Sources */,
 				9360FF001DF93CB6009BE7A4 /* NSObject+AXNetworkingMethods.m in Sources */,
 				93FEEB921DF7D94600F3F34F /* LFUIImage+Resource.m in Sources */,
 				9360FF011DF93CB6009BE7A4 /* NSString+AXNetworkingMethods.m in Sources */,
@@ -1587,6 +1612,7 @@
 				93FEEB891DF7D94600F3F34F /* LFUIButton+EnlargeEdge.m in Sources */,
 				9360FF101DF93CB6009BE7A4 /* CTService.m in Sources */,
 				9360FF3A1DF958A0009BE7A4 /* MMDrawerBarButtonItem.m in Sources */,
+				939600B11EA5AC1F00AB8AFA /* UIViewController+MsgHandle.m in Sources */,
 				9360FF0E1DF93CB6009BE7A4 /* CTSignatureGenerator.m in Sources */,
 				93FEEB841DF7D94600F3F34F /* LFUIAlertView+Blocks.m in Sources */,
 				93FEEBAC1DF7D94600F3F34F /* LocalPushCenter.m in Sources */,

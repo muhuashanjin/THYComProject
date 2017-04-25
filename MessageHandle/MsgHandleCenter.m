@@ -10,15 +10,27 @@
 #import "AppDelegate.h"
 
 static  NSMutableArray*controllerArr =  nil;
-static  BaseViewController *rootviewcontrol = nil;
+static  UIViewController *rootviewcontrol = nil;
 
 @implementation MsgHandleCenter
+
+void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector)  {
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    if (didAddMethod) {
+        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    }
+    else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
 
 +(id)getControllersWithDescription:(NSString *)descri
 {
     NSMutableArray *vcs = [NSMutableArray array];
     for (int i = 0; i<controllerArr.count; i++) {
-        BaseViewController *viewController = [controllerArr objectAtIndex:i];
+        UIViewController *viewController = [controllerArr objectAtIndex:i];
         if ([viewController.class.description isEqualToString:descri])
         {
             [vcs addObject:viewController];
@@ -36,11 +48,13 @@ static  BaseViewController *rootviewcontrol = nil;
     }
     
     [controllerArr addObject:controller];
+    DLog(@"controllerArr:%@\n add:%@",controllerArr,controller);
 }
 
 +(void)removeController:(id)controller
 {
     [controllerArr removeObject:controller];
+    DLog(@"controllerArr:%@\n remove:%@",controllerArr,controller);
 }
 
 +(BOOL)findController:(Class)controllerClass
@@ -48,7 +62,7 @@ static  BaseViewController *rootviewcontrol = nil;
     NSInteger num = [controllerArr count];
     for (NSInteger i = num-1; i>=0; i--)
     {
-        BaseViewController *viewController = [controllerArr objectAtIndex:i];
+        UIViewController *viewController = [controllerArr objectAtIndex:i];
         if ([viewController.class.description isEqualToString:controllerClass.description])
         {
             return YES;
@@ -65,7 +79,7 @@ static  BaseViewController *rootviewcontrol = nil;
     
     for (NSInteger i = num-1; i>=0; i--)
     {
-        BaseViewController *viewController = [controllerArr objectAtIndex:i];
+        UIViewController *viewController = [controllerArr objectAtIndex:i];
         if ([viewController.class.description isEqualToString:controllerClass.description])
         {
             return viewController;
@@ -82,7 +96,7 @@ static  BaseViewController *rootviewcontrol = nil;
     
     for (NSInteger i = num-1; i>=0; i--)
     {
-        BaseViewController *viewController = [controllerArr objectAtIndex:i];
+        UIViewController *viewController = [controllerArr objectAtIndex:i];
         if ([viewController isKindOfClass:controllerClass])
         {
             return viewController;
@@ -101,7 +115,7 @@ static  BaseViewController *rootviewcontrol = nil;
         NSInteger num = [controllerArr count];
         for (NSInteger i = num-1; i>=0; i--)
         {
-            BaseViewController *viewController = [controllerArr objectAtIndex:i];
+            UIViewController *viewController = [controllerArr objectAtIndex:i];
             if (viewController == conn)
             {
                 [viewController PreProcessMessage:messageTypeTemp withResult:resultTemp withArg:argTemp];
@@ -145,7 +159,7 @@ static  BaseViewController *rootviewcontrol = nil;
         int num = (int)[vcArr count];
         for (int i = num-1; i>=0; i--)
         {
-            BaseViewController *viewController = [vcArr objectAtIndex:i];
+            UIViewController *viewController = [vcArr objectAtIndex:i];
             [viewController PreProcessMessage:messageTypeTemp withResult:resultTemp withArg:argTemp];
             BOOL isDone =  [viewController handleMessage:messageTypeTemp withResult:resultTemp withArg:argTemp];
             if (isDone)
@@ -173,7 +187,7 @@ static  BaseViewController *rootviewcontrol = nil;
     [MsgHandleCenter sendMessage:messageType withArg:arg withVc:nil withUploadData:nil withDownloadPath:path];
 }
 
-+(void)sendMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc withUploadData:(id)data withDownloadPath:(NSString *)path
++(void)sendMessage:(int)messageType withArg:(id)arg withVc:(UIViewController *)vc withUploadData:(id)data withDownloadPath:(NSString *)path
 {
     MsgHandleCenter *mHandleCenter = [MsgHandleCenter new];
     if ([[NSThread currentThread] isMainThread])
@@ -197,7 +211,7 @@ static  BaseViewController *rootviewcontrol = nil;
     }
 }
 
-- (id)handMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc withUploadData:(id)data withDownloadPath:(NSString *)path
+- (id)handMessage:(int)messageType withArg:(id)arg withVc:(UIViewController *)vc withUploadData:(id)data withDownloadPath:(NSString *)path
 {
     // extension dispatch
     AppDelegate *app = (AppDelegate *)[[UIApplication  sharedApplication] delegate];

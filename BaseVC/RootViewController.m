@@ -29,14 +29,14 @@
 
 - (void)setUpShowVC
 {
+    CenterViewController *centerVC = [[CenterViewController alloc] init];
+    BaseNavViewController *centerNav = [[BaseNavViewController alloc] initWithRootViewController:centerVC];
+
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     BaseNavViewController *leftNav = [[BaseNavViewController alloc] initWithRootViewController:leftVC];
     
     RightViewController *rightVC = [[RightViewController alloc] init];
     BaseNavViewController *rightNav = [[BaseNavViewController alloc] initWithRootViewController:rightVC];
-    
-    CenterViewController *centerVC = [[CenterViewController alloc] init];
-    BaseNavViewController *centerNav = [[BaseNavViewController alloc] initWithRootViewController:centerVC];
     
     MMDrawerController *drawerController = [[MMDrawerController alloc]
                                             initWithCenterViewController:centerNav

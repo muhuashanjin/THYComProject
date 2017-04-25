@@ -10,9 +10,6 @@
 #import "RootViewController.h"
 #import "BaseNavViewController.h"
 
-#define AddExtension(objc_class) \
-[self performSelector:@selector(addExtension:) withObject:[objc_class class]]
-
 @interface AppDelegate ()
 
 @end
@@ -27,9 +24,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = rootNav;
-    
-    [self loadExtensions];
-    
+        
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -63,23 +58,6 @@
     [self saveContext];
 }
 
-#pragma mark - laod Extensions
-- (void)loadExtensions{
-    AddExtension(MainExtension);
-}
-
-- (void)addExtension:(Class)clazz
-{
-    if ([clazz conformsToProtocol:@protocol(ExtensionHandle)]) {
-        if (!self.extensionArray) {
-            self.extensionArray = [NSMutableArray array];
-        }
-        [self.extensionArray addObject:clazz];
-    }
-    else {
-        NSAssert(@"Loading extension error : %@", NSStringFromClass(clazz));
-    }
-}
 
 #pragma mark - Core Data stack
 

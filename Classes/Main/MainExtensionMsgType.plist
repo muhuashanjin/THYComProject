@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>kTaskMsg_Main_Base</key>
+	<string>我的消息类型初始标识</string>
+	<key>kTaskMsg_Main_TestToNetWork</key>
+	<string>测试网络请求消息类型</string>
+	<key>kTaskMsg_Main_TestToVC</key>
+	<string>测试VC通信消息类型</string>
+	<key>kTaskMsg_Main_TestToExtension</key>
+	<string>测试扩展处理消息类型</string>
+	<key>kTaskMsg_Main_Count</key>
+	<string>我的消息类型总数标识</string>
+</dict>
+</plist>

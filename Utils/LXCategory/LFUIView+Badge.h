@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, LFBadgeSizeType) {
 @property (nonatomic, strong, setter=setLf_badge:, getter=lf_badge) UILabel *badge;
 @property (nonatomic, setter=setLf_badgeOriginX:, getter=lf_badgeOriginX) CGFloat badgeOriginX;
 @property (nonatomic, getter=lf_badgeOriginY, setter=setLf_badgeOriginY:) CGFloat badgeOriginY;
-@property (nonatomic, getter=lf_showAllNumbers, setter=setLf_showAllNumbers:) BOOL showAllNumbers;//<展示完整的数字 (默认超过100展示99+)  等于0也展示
+@property (nonatomic, getter=lf_showAllNumbers, setter=setLf_showAllNumbers:) BOOL showAllNumbers;///< (默认超过100展示99+)  等于0也展示
 
 
 /**

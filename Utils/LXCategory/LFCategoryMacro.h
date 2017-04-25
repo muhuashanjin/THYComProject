@@ -253,8 +253,8 @@ LF_EXTERN_C_BEGIN
 /**
  测试方法调用时间
  
- @param ^block     code to profile
- @param ^complete  code time cost (ms)
+ @param block     code to profile
+ @param complete  code time cost (ms)
  */
 static inline void ProfileTime(void (^block)(void), void (^complete)(double ms)) {
     struct timeval t0, t1;

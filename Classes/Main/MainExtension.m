@@ -12,12 +12,12 @@
 
 + (BOOL)autoHttpGetTaskMsg:(int)taskMsg
 {
-    return (kTaskMsg_Main_TestToExtension == taskMsg);
+    return (kTaskMsg_Main_TestToNetWork == taskMsg);
 }
 
 + (BOOL)autoHttpPostTaskMsg:(int)taskMsg
 {
-    return (kTaskMsg_Main_TestToVC == taskMsg);
+    return (kTaskMsg_Main_TestToNetWork == taskMsg);
 }
 
 + (BOOL)handleResourceMessageType:(int)messageType withArg:(id)arg

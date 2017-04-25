@@ -20,6 +20,8 @@
     self.navigationItem.title = @"LeftVC";
 
     self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    [self sendMessage:kTaskMsg_Main_TestToNetWork withArg:kURL_Main_TestToNetWork];
 }
 
 - (UIBarButtonItem *)leftBarBtnItem{return nil;}

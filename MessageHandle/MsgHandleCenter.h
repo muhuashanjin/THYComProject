@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
-#import "BaseViewController.h"
-
+#import <objc/runtime.h>
+#import "UIViewController+MsgHandle.h"
+#import "AppDelegate+MsgHandle.h"
 
 #define kExtMsgMaxCount 100000
 #define MsgBaseOfExtension(extension_id)               ((extension_id) * kExtMsgMaxCount)
+
+void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector);
 
 /*!
  @typedef ExtensionID
@@ -24,6 +26,7 @@
 typedef enum {
     kExtID_Default,
     kExtID_Main,
+    kExtID_Login,
     kExtID_COUNT // 记录extension总数
 } ExtensionID;
 
@@ -50,7 +53,7 @@ typedef enum {
 + (BOOL)handleResourceMessageType:(int)messageType withArg:(id)arg;
 
 /*! Used for processing messages that other controllers don't handle */
-+ (BOOL)handleOnRootController:(BaseViewController *)rootController message:(int)messageType withResult:(int)result withArg:(id)arg;
++ (BOOL)handleOnRootController:(UIViewController *)rootController message:(int)messageType withResult:(int)result withArg:(id)arg;
 
 @end
 
@@ -135,7 +138,7 @@ typedef enum {
  @param arg the parameters of the incoming, arg must be url
  @param path download finish , set download path
  */
-+(void)sendMessage:(int)messageType withArg:(id)arg withVc:(BaseViewController *)vc withUploadData:(id)data withDownloadPath:(NSString *)path;
++(void)sendMessage:(int)messageType withArg:(id)arg withVc:(UIViewController *)vc withUploadData:(id)data withDownloadPath:(NSString *)path;
 
 
 @end

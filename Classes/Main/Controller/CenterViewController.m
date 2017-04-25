@@ -44,7 +44,7 @@
 
 - (void)actionDone
 {
-    [self.navigationController pushViewController:[NSClassFromString(@"DetailViewController") new] animated:YES];
+    [self.navigationController pushViewController:[NSClassFromString(@"LeftViewController") new] animated:YES];
 }
 
 #pragma mark - UITabBarDelegate
@@ -67,16 +67,9 @@
 #pragma mark - messageHandle
 - (BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg
 {
-    if (kTaskMsg_Main_TestToExtension == messageType)
+    if (kTaskMsg_Main_TestToNetWork == messageType)
     {
-        
-        NSLog(@"kTaskMsg_Main_TestToExtension:%@",arg);
-    }
-
-    if (kTaskMsg_Main_TestToVC == messageType)
-    {
-     
-        NSLog(@"kTaskMsg_Main_TestToVC:%@",arg);
+        NSLog(@"kTaskMsg_Main_TestToNetWork:%@",arg);
     }
     return NO;
 }
