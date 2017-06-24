@@ -20,13 +20,6 @@
     self.navigationItem.title = @"RightVC";
     
     self.view.backgroundColor = [UIColor lightGrayColor];
-
-}
-
-#pragma mark - messageHandle
-- (BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg
-{
-    return NO;
 }
 
 - (UIBarButtonItem *)leftBarBtnItem{return nil;}

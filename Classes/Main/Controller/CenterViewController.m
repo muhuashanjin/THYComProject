@@ -44,7 +44,7 @@
 
 - (void)actionDone
 {
-    [self.navigationController pushViewController:[NSClassFromString(@"LeftViewController") new] animated:YES];
+    [self.navigationController pushViewController:[NSClassFromString(@"RightViewController") new] animated:YES];
 }
 
 #pragma mark - UITabBarDelegate
@@ -100,11 +100,9 @@
     [self.view addSubview:tabBar];
     
     UITabBarItem *tabBarItem1 = [[UITabBarItem alloc] initWithTitle:@"qiakr1" image:[UIImage imageNamed:@"tabbarItem@2x.png"] tag:0];
-    tabBarItem1.badgeValue = [NSString stringWithFormat:@"%d", 3];
     UITabBarItem * tabBarItem2 = [[UITabBarItem alloc] initWithTitle:@"qiakr2" image:[UIImage imageNamed:@"tabbarItem@2x.png"] tag:1];
     UITabBarItem * tabBarItem3 = [[UITabBarItem alloc] initWithTitle:@"qiakr3" image:[UIImage imageNamed:@"tabbarItem@2x.png"] tag:2];
-    UITabBarItem * tabBarItem4 = [[UITabBarItem alloc] initWithTitle:@"qiakr4" image:[UIImage imageNamed:@"tabbarItem@2x.png"] tag:3];
-    NSArray *tabBarItemArray = [[NSArray alloc] initWithObjects: tabBarItem1, tabBarItem2, tabBarItem3, tabBarItem4,nil];
+    NSArray *tabBarItemArray = [[NSArray alloc] initWithObjects: tabBarItem1, tabBarItem2, tabBarItem3,nil];
     [tabBar setItems: tabBarItemArray];
 }
 

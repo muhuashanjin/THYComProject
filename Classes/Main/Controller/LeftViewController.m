@@ -24,6 +24,16 @@
     [self sendMessage:kTaskMsg_Main_TestToNetWork withArg:kURL_Main_TestToNetWork];
 }
 
+#pragma mark - messageHandle
+- (BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg
+{
+    if (messageType == kTaskMsg_Main_TestToNetWork) {
+        NSLog(@"arg:%@",arg);
+    }
+    
+    return NO;
+}
+
 - (UIBarButtonItem *)leftBarBtnItem{return nil;}
 
 @end

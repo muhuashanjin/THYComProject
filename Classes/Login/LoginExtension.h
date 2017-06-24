@@ -11,7 +11,7 @@
 @interface LoginExtension : NSObject <ExtensionHandle>
 
 typedef enum {
-    kTaskMsg_Login_Base = MsgBaseOfExtension(kExtID_Login),
+    kTaskMsg_Login_Base ,
 }taskMsg_Login;
 
 #define kURL_Main_TestLogin @"" kBaseUrl "/bdCustomerLogin.json?username=13062717779&wechat=wx_qiakrtest9"

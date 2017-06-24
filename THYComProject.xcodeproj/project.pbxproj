@@ -58,7 +58,6 @@
 		939600B11EA5AC1F00AB8AFA /* UIViewController+MsgHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 939600B01EA5AC1F00AB8AFA /* UIViewController+MsgHandle.m */; };
 		939600BC1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 939600BB1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.m */; };
 		939600BE1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939600BD1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist */; };
-		939600C01EA6178E00AB8AFA /* MainExtensionMsgType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939600BF1EA6178E00AB8AFA /* MainExtensionMsgType.plist */; };
 		93C4B65C1E053CD60051C109 /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C4B6531E053CD60051C109 /* NSObject+Swizzling.m */; };
 		93C4B65D1E053CD60051C109 /* sure_placeholder_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C4B6541E053CD60051C109 /* sure_placeholder_error@2x.png */; };
 		93C4B65E1E053CD60051C109 /* sure_placeholder_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C4B6551E053CD60051C109 /* sure_placeholder_error@3x.png */; };
@@ -268,7 +267,6 @@
 		939600BA1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+MsgHandle.h"; sourceTree = "<group>"; };
 		939600BB1EA5DDB100AB8AFA /* AppDelegate+MsgHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+MsgHandle.m"; sourceTree = "<group>"; };
 		939600BD1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MsgHandleCenterExtension.plist; sourceTree = "<group>"; };
-		939600BF1EA6178E00AB8AFA /* MainExtensionMsgType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MainExtensionMsgType.plist; sourceTree = "<group>"; };
 		93C4B6521E053CD60051C109 /* NSObject+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzling.h"; sourceTree = "<group>"; };
 		93C4B6531E053CD60051C109 /* NSObject+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzling.m"; sourceTree = "<group>"; };
 		93C4B6541E053CD60051C109 /* sure_placeholder_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sure_placeholder_error@2x.png"; sourceTree = "<group>"; };
@@ -579,7 +577,6 @@
 				932EAD7C1E0A511A0044BC47 /* Controller */,
 				932EAD841E0A511A0044BC47 /* MainExtension.h */,
 				932EAD851E0A511A0044BC47 /* MainExtension.m */,
-				939600BF1EA6178E00AB8AFA /* MainExtensionMsgType.plist */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1389,7 +1386,6 @@
 				9360FF141DF93CB6009BE7A4 /* CTNetworkingConfiguration.plist in Resources */,
 				939600BE1EA60D2D00AB8AFA /* MsgHandleCenterExtension.plist in Resources */,
 				93D0153B1DF6893400EE1EE2 /* hm_zlbg@2x.png in Resources */,
-				939600C01EA6178E00AB8AFA /* MainExtensionMsgType.plist in Resources */,
 				93FEEBA91DF7D94600F3F34F /* 分类说明.rtf in Resources */,
 				93D0153C1DF6893400EE1EE2 /* navi_back@2x.png in Resources */,
 				93FEEBAD1DF7D94600F3F34F /* 工具类说明.rtf in Resources */,
